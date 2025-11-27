@@ -43,7 +43,7 @@
                 <a href="https://www.linkedin.com/in/shrivibhu-m-s-71888a32b/"><i class='bx bxl-linkedin' ></i></a>
                 <a href="https://www.github.com/shadow-004981"><i class='bx bxl-github' ></i></a>
             </div>
-            <a href="#" class="btn">Download CV</a>
+            <a href="assets/Shrivibhu_resume.docx" class="btn">Download CV</a>
         </div>
         
         <div class="home-image">
@@ -95,21 +95,9 @@
         <div class="certs-container">
             <div class="cert-box">
                 <i class="bx bxs-badge-check"></i>
-                <h3>Agile Organizations:Devops and Agile</h3>
-                <p>Demonstrates Knowledge of Agile principles and iterative development processes.</p>
-                <a href="assets/agile.pdf" class="btn">View Certificate</a>
-            </div>
-            <div class="cert-box">
-                <i class="bx bxs-badge-check"></i>
-                <h3>Scrum Foundations</h3>
-                <p>Understanding of scrum framework including sprint planning, standups, and retrospectives.</p>
-                <a href="assets/scrum.pdf" class="btn">View Certificate</a>
-            </div>
-            <div class="cert-box">
-                <i class="bx bxs-badge-check"></i>
-                <h3>Waterfall software development model</h3>
-                <p>Knowledge of structured project management phases and milestone tracking.</p>
-                <a href="assets/waterfall.pdf" class="btn">View Certificate</a>
+                <h3>Others (Agile, Scrum, Waterfall)</h3>
+                <p>Combined category containing multiple development methodology certifications.</p>
+                <a href="javascript:void(0)" class="btn" onclick="openModal('others')">View Certificates</a>
             </div>
             <div class="cert-box">
                 <i class="bx bxs-badge-check"></i>
@@ -121,13 +109,15 @@
                 <i class="bx bxs-badge-check"></i>
                 <h3>Linux system Administration</h3>
                 <p>Hands-on experience with linux commands, system configuration, and user management.</p>
-                <a href="javascript:void(0)" class="btn">View Certificate</a>
+                <a href="javascript:void(0)" class="btn" onclick="openModal('linux')">View Certificates</a>
+
             </div>
             <div class="cert-box">
                 <i class="bx bxs-badge-check"></i>
                 <h3>Windows Administration</h3>
                 <p>Familiar with active directory, group policies, and windows security configuration.</p>
-                <a href="javascript:void(0)" class="btn">View Certificate</a>
+                <a href="javascript:void(0)" class="btn" onclick="openModal('windows')">View Certificates</a>
+
             </div>
         </div>
     </section>
@@ -205,6 +195,16 @@
         <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
     </div>
 </footer>
+
+<!-- Modal -->
+<div id="certModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modal-title"></h2>
+    <div id="modal-list"></div>
+  </div>
+</div>
+
 
 <!--scroll reveal-->
     <script src="https://unpkg.com/scrollreveal"></script>
