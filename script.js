@@ -56,11 +56,6 @@ const certData = {
         { name: "Scrum Foundations", link: "assets/scrum.pdf" },
         { name: "Waterfall Software Development Model", link: "assets/waterfall.pdf" }
     ],
-    linux: [
-        { name: "Linux Basics", link: "assets/linux1.pdf" },
-        { name: "Linux User Management", link: "assets/linux2.pdf" },
-        { name: "File Permissions & Ownership", link: "assets/linux3.pdf" }
-    ],
     windows: [
         { name: "Windows Administration: Managing users & Groups", link: "assets/windows_1.pdf" },
         { name: "Windows Administration: System Security & Maintenance", link: "assets/windows_2.pdf" },
@@ -70,15 +65,15 @@ const certData = {
 };
 
 function openModal(category) {
+    const certificates = certData[category];
+    if (!certificates) return;
+
     document.getElementById("certModal").style.display = "flex";
-    document.getElementById("modal-title").innerText = category.toUpperCase() + " Certificates";
+    document.getElementById("modal-title").innerText = category === "others" ? "Agile, Scrum & Waterfall Certificates" : "Windows Administration Certificates";
 
-    let html = "";
-    certData[category].forEach(c => {
-        html += `<a href="${c.link}" target="_blank">${c.name}</a>`;
-    });
-
-    document.getElementById("modal-list").innerHTML = html;
+    document.getElementById("modal-list").innerHTML = certificates.map(c =>
+        `<a href="${c.link}" target="_blank" rel="noopener noreferrer">${c.name}</a>`
+    ).join("");
 }
 
 function closeModal() {

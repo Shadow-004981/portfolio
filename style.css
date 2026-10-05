@@ -54,12 +54,22 @@ section {
     color: var(--text-color);
     font-weight: 600;
     cursor: default;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 2.4rem;
 }
 
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
-    margin: 4rem;
+    margin: 0;
+    white-space: nowrap;
     transition: .3s;
 }
 .navbar a:hover,
@@ -79,7 +89,8 @@ section {
     align-items: center;
 }
 
-.home-image img {
+.home-image img,
+.home-img img {
     width: 35vw;
     animation: floatImage 4s ease-in-out infinite !important;
 }
@@ -195,7 +206,7 @@ span {
     text-align: center;
 }
 
-.skills.heading {
+.skills .heading {
     font-size: 3rem;
     margin-bottom: 2rem;
     color: var(--text-color);
@@ -207,7 +218,7 @@ span {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fix, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: center;
     gap: 2rem;
 }
@@ -218,7 +229,7 @@ span {
     box-shadow: 0 0 10px rgba(0, 238, 255, 0.2);
     transition: 0.3s ease;
     padding: 30px 20px;
-    height: 250px;
+    min-height: 210px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -243,9 +254,9 @@ span {
 }
 
 .skills-box p {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: var(--text-color);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .certifications {
@@ -352,13 +363,23 @@ span {
     padding: 2rem;
     text-align: left;
 }
+.project-label {
+    color: var(--main-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+.project-card.featured-project {
+    border: .1rem solid rgba(0, 238, 255, 0.35);
+}
 .project-info h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: var(--main-color);
 }
 .project-info p {
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: var(--text-color);
     margin-bottom: 1.5rem;
     line-height: 1.6;
@@ -502,6 +523,13 @@ span {
 @media (max-width: 991px) {
     .header {
         padding: 2rem 3%;
+        gap: 1.5rem;
+    }
+    .navbar {
+        gap: 1.2rem;
+    }
+    .navbar a {
+        font-size: 1.4rem;
     }
     section {
         padding: 10rem 3% 2rem;
@@ -555,6 +583,7 @@ span {
     .home-content h1 {
         font-size: 5rem;
     }
+    .home-image img,
     .home-img img {
         width: 70vw;
         margin-top: 4rem;
@@ -596,6 +625,7 @@ span {
 }
 
 @media (max-width: 365px) {
+    .home-image img,
     .home-img img {
         width: 90vw;
     }
